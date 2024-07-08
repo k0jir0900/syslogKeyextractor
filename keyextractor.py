@@ -2,7 +2,7 @@ import argparse
 import csv
 import re
 
-def parse_syslog(file_path, key_separator='|', kv_separator='='):
+def parse_syslog(file_path, key_separator=' ', kv_separator='='):
     with open(file_path, 'r') as file:
         lines = file.readlines()
 
