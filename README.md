@@ -89,3 +89,10 @@ python keyextractor.py -f sample.txt -ks "|"
 | sessionId:string   | sessionId:string   |
 | externalKeyLabel:string  | externalKeyLabel:string |
 | jumpGroupId:int  | jumpGroupId:int  |
+
+# Bonus
+```sh
+| summarize s = make_set(SyslogMessageV3) by DeviceEventClassID
+| extend l = s[0]
+| project DeviceEventClassID, l
+```
